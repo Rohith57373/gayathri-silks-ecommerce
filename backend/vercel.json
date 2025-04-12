@@ -1,30 +1,15 @@
 {
     "version": 2,
+    "builds": [
+        {
+            "src": "index.js",
+            "use": "@vercel/node"
+        }
+    ],
     "routes": [
         {
-            "src": "/api/.*",
-            "methods": [
-                "GET",
-                "POST",
-                "PUT",
-                "DELETE",
-                "OPTIONS"
-            ],
-            "headers": {
-                "Access-Control-Allow-Origin": "https://your-frontend-domain.com",
-                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
-                "Access-Control-Allow-Credentials": "true",
-                "X-Content-Type-Options": "nosniff",
-                "X-Powered-By": " "
-            }
-        },
-        {
-            "src": "/api/.*",
-            "methods": [
-                "OPTIONS"
-            ],
-            "dest": "/api/options-handler.js"
+            "src": "/(.*)",
+            "dest": "index.js"
         }
     ]
 }
