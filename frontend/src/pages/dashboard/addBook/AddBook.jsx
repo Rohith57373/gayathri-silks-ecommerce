@@ -13,7 +13,7 @@ const AddBook = () => {
 
     const onSubmit = async (data) => {
         try {
-            const result = await axios.post('http://localhost:5000/api/cloud/upload', {
+            const result = await axios.post(`${getBaseUrl()}/api/cloud/upload`, {
                 image: image,
                 title: data.title,
                 description: data.description,
